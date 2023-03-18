@@ -1,22 +1,17 @@
-export interface themeType {
-  colors: {
-    federalBlue: string;
-    slightGray: string;
-    white: string;
-    darkGray: string;
+import { type planetNameType } from './planet';
 
-    // planets
-    mercury: string;
-    venus: string;
-    earth: string;
-    mars: string;
-    jupiter: string;
-    saturn: string;
-    uranus: string;
-    neptune: string;
-  };
+export interface themeType {
+  colors: Record<nameColorType, string>;
   fonts: {
-    spartan: string;
     antonio: string;
-  };
+    spartan: string;
+  }
 }
+
+export type primaryNameCOlorType =
+  | 'federalBlue'
+  | 'slightGray'
+  | 'white'
+  | 'darkGray';
+
+export type nameColorType = primaryNameCOlorType | planetNameType;

@@ -22,6 +22,26 @@ export const Wrapper = styled.header`
     left: 0;
     right: 0;
   }
+
+  @media (min-width: 768px) {
+    height: 16rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+
+    padding: 3.2rem 5.1rem 0 5.1rem;
+  }
+
+  @media (min-width: 1024px) {
+    height: 8.6rem;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 3.2rem;
+  }
 `;
 
 export const StyledTitle = styled.h1`
