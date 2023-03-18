@@ -1,9 +1,15 @@
-import { useParams } from 'react-router-dom';
+import { usePlanet } from '../../hooks/usePlanet';
 
-export const Planet = () => {
-  const { planetName } = useParams();
+const Planet = () => {
+  const { planet, error } = usePlanet();
 
-  return <p>Hello from {planetName}!</p>;
+  return (
+    <p>
+      {!error && planet !== null
+        ? `Hello from ${planet.name}`
+        : 'Maybe next time!'}
+    </p>
+  );
 };
 
 export default Planet;
