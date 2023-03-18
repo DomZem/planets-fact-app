@@ -6,13 +6,13 @@ export const Wrapper = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  height: 6.8rem;
+  height: 6.9rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 1.6rem 1.9rem 1.6rem 2.4rem; // 2.1rem on the right site, beasue toggle button have 0.3rem
+  padding: 0 1.9rem 0 2.4rem; // 1.9rem on the right site, beasue toggle button have 0.5rem
 
   background-color: ${({ theme }) => theme.colors.federalBlue};
 
