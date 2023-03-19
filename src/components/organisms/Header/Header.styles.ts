@@ -16,6 +16,8 @@ export const Wrapper = styled.header`
 
   background-color: ${({ theme }) => theme.colors.federalBlue};
 
+  z-index: 990;
+
   ${Divider} {
     position: absolute;
     bottom: 0;

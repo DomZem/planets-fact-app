@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Divider } from '../../components/atoms/Divider/Divider';
 import { usePlanet } from '../../hooks/usePlanet';
 import { type planetNameType } from '../../types/planet';
 import {
@@ -16,16 +15,15 @@ const Planet = () => {
       {!error && planet !== null ? (
         <Wrapper>
           <StyledSwitchContentButtons>
-            <StyledButton isActive={true} nameColor={planet.name}>
+            <StyledButton isActive={true} color={planet.name}>
               overview
             </StyledButton>
-            <StyledButton isActive={false} nameColor={planet.name}>
+            <StyledButton isActive={false} color={planet.name}>
               structure
             </StyledButton>
-            <StyledButton isActive={false} nameColor={planet.name}>
+            <StyledButton isActive={false} color={planet.name}>
               surface
             </StyledButton>
-            <Divider />
           </StyledSwitchContentButtons>
 
           <StyledImageWrapper>

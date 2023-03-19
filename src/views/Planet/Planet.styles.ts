@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Divider } from '../../components/atoms/Divider/Divider';
 import { type nameColorType } from '../../types/theme';
 
 export const Wrapper = styled.div`
@@ -8,28 +7,24 @@ export const Wrapper = styled.div`
 
 export const StyledSwitchContentButtons = styled.div`
   position: fixed;
+  top: 6.9rem;
   left: 0;
   right: 0;
+
   height: 5.1rem;
-  top: 6.9rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   padding: 0 2.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   background-color: ${({ theme }) => theme.colors.federalBlue};
-
-  ${Divider} {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
 `;
 
 export const StyledButton = styled.button<{
-  nameColor: nameColorType;
+  color: nameColorType;
   isActive: boolean;
 }>`
   position: relative;
@@ -60,6 +55,6 @@ export const StyledButton = styled.button<{
     bottom: 0;
     width: ${({ isActive }) => (isActive ? '100%' : 0)};
     height: 4px;
-    background-color: ${({ theme, nameColor }) => theme.colors[nameColor]};
+    background-color: ${({ theme, color }) => theme.colors[color]};
   }
 `;
