@@ -5,9 +5,11 @@ import { type nameColorType } from '../../types/theme';
 export const Wrapper = styled.div`
   padding: 2.4rem;
 
+  min-height: calc(100vh - 12rem);
+
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(32vh, 1fr) 23.5rem auto;
+  grid-template-rows: minmax(auto, 1fr) 25rem auto;
 
   gap: 2.4rem;
 `;
@@ -88,6 +90,8 @@ export const StyledButton = styled.button<{
 
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
+
+  opacity: ${({ isActive }) => (isActive ? 1 : 0.5)};
 
   &::before {
     position: absolute;

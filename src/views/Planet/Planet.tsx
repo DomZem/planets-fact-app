@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import SourceLink from '../../components/atoms/SourceLink/SourceLink';
 import { usePlanet } from '../../hooks/usePlanet';
+import { type contentNameType } from '../../types/planet';
 import {
   StyledButton,
   StyledDescription,
@@ -13,6 +15,11 @@ import {
 
 const Planet = () => {
   const { planet, error } = usePlanet();
+  const [contentName, setContentName] = useState<contentNameType>('overview');
+
+  const handleSetContentName = (contentName: contentNameType) => {
+    setContentName(contentName);
+  };
 
   return (
     <>
@@ -20,13 +27,31 @@ const Planet = () => {
         <>
           <Wrapper>
             <StyledSwitchContentButtons>
-              <StyledButton isActive={true} color={planet.name}>
+              <StyledButton
+                isActive={contentName === 'overview'}
+                color={planet.name}
+                onClick={() => {
+                  handleSetContentName('overview');
+                }}
+              >
                 overview
               </StyledButton>
-              <StyledButton isActive={false} color={planet.name}>
+              <StyledButton
+                isActive={contentName === 'structure'}
+                color={planet.name}
+                onClick={() => {
+                  handleSetContentName('structure');
+                }}
+              >
                 structure
               </StyledButton>
-              <StyledButton isActive={false} color={planet.name}>
+              <StyledButton
+                isActive={contentName === 'geology'}
+                color={planet.name}
+                onClick={() => {
+                  handleSetContentName('geology');
+                }}
+              >
                 surface
               </StyledButton>
             </StyledSwitchContentButtons>
@@ -40,10 +65,10 @@ const Planet = () => {
 
             <StyledDescription>
               <StyledTitle>{planet.name}</StyledTitle>
-              <p>{planet.overview.content}</p>
+              <p>{planet[contentName].content}</p>
               <SourceLink
                 sourceName="Wikipedia"
-                source={planet.overview.source}
+                source={planet[contentName].source}
               />
             </StyledDescription>
             <StyledStatistics>
