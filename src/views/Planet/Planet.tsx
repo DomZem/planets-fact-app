@@ -1,9 +1,13 @@
-import styled from 'styled-components';
+import SourceLink from '../../components/atoms/SourceLink/SourceLink';
 import { usePlanet } from '../../hooks/usePlanet';
-import { type planetNameType } from '../../types/planet';
 import {
   StyledButton,
+  StyledContent,
+  StyledDescription,
+  StyledImage,
+  StyledImageWrapper,
   StyledSwitchContentButtons,
+  StyledTitle,
   Wrapper,
 } from './Planet.styles';
 
@@ -32,21 +36,19 @@ const Planet = () => {
               src={planet.images.overview.url}
             />
           </StyledImageWrapper>
+
+          <StyledDescription>
+            <StyledTitle>{planet.name}</StyledTitle>
+            <StyledContent>{planet.overview.content}</StyledContent>
+            <SourceLink
+              sourceName="Wikipedia"
+              source={planet.overview.source}
+            />
+          </StyledDescription>
         </Wrapper>
       ) : null}
     </>
   );
 };
-
-export const StyledImageWrapper = styled.div`
-  min-height: 32vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const StyledImage = styled.img<{ planetName: planetNameType }>`
-  max-width: ${({ theme, planetName }) => theme.planetsMaxSize[planetName]};
-`;
 
 export default Planet;

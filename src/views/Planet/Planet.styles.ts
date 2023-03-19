@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { type planetNameType } from '../../types/planet';
 import { type nameColorType } from '../../types/theme';
 
 export const Wrapper = styled.div`
@@ -21,6 +22,44 @@ export const StyledSwitchContentButtons = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   background-color: ${({ theme }) => theme.colors.federalBlue};
+`;
+
+export const StyledImageWrapper = styled.div`
+  min-height: 32vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const StyledImage = styled.img<{ planetName: planetNameType }>`
+  max-width: ${({ theme, planetName }) => theme.planetsMaxSize[planetName]};
+`;
+
+export const StyledDescription = styled.div`
+  height: 23.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+
+  text-align: center;
+`;
+
+export const StyledContent = styled.p`
+  flex: 1;
+`;
+
+export const StyledTitle = styled.h2`
+  font-family: ${({ theme }) => theme.fonts.antonio};
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 5.2rem;
+
+  text-transform: uppercase;
+
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const StyledButton = styled.button<{
