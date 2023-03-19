@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import SourceLink from '../../components/atoms/SourceLink/SourceLink';
+import SwitchContentButtons from '../../components/molecules/SwitchContentButtons/SwitchContentButtons';
 import { usePlanet } from '../../hooks/usePlanet';
 import { type contentNameType } from '../../types/planet';
 import {
-  StyledButton,
   StyledDescription,
   StyledImage,
   StyledImageWrapper,
-  StyledSwitchContentButtons,
   StyledTitle,
   Wrapper,
 } from './Planet.styles';
@@ -26,35 +25,11 @@ const Planet = () => {
       {!error && planet !== null ? (
         <>
           <Wrapper>
-            <StyledSwitchContentButtons>
-              <StyledButton
-                isActive={contentName === 'overview'}
-                color={planet.name}
-                onClick={() => {
-                  handleSetContentName('overview');
-                }}
-              >
-                overview
-              </StyledButton>
-              <StyledButton
-                isActive={contentName === 'structure'}
-                color={planet.name}
-                onClick={() => {
-                  handleSetContentName('structure');
-                }}
-              >
-                structure
-              </StyledButton>
-              <StyledButton
-                isActive={contentName === 'geology'}
-                color={planet.name}
-                onClick={() => {
-                  handleSetContentName('geology');
-                }}
-              >
-                surface
-              </StyledButton>
-            </StyledSwitchContentButtons>
+            <SwitchContentButtons
+              planetName={planet.name}
+              contentName={contentName}
+              handleSetContentName={handleSetContentName}
+            />
 
             <StyledImageWrapper>
               <StyledImage

@@ -8,7 +8,7 @@ export interface planetType {
     content: string;
     source: string;
   };
-  geology: {
+  surface: {
     content: string;
     source: string;
   };
@@ -19,11 +19,11 @@ export interface planetType {
   images: {
     overview: { url: string };
     structure: { url: string };
-    geology: { url: string };
+    surface: { url: string };
   };
 }
 
-export type contentNameType = 'overview' | 'structure' | 'geology';
+export type contentNameType = 'overview' | 'structure' | 'surface';
 
 export type planetNameType =
   | 'mercury'

@@ -18,7 +18,7 @@ export const usePlanet = () => {
     	images {
     		overview {url},
       	structure {url},
-      	geology {url}
+      	surface {url}
     	},
     	overview {
       	content,
@@ -28,7 +28,7 @@ export const usePlanet = () => {
       	content,
       	source
     	},
-    	geology {
+    	surface {
       	content,
       	source
     	},
