@@ -46,15 +46,15 @@ const Planet = () => {
                 source={planet.overview.source}
               />
             </StyledDescription>
+            <StyledStatistics>
+              {planet.statistics.map((stat) => (
+                <StyledStat key={stat.title}>
+                  <p>{stat.title}</p>
+                  <h3>{stat.value}</h3>
+                </StyledStat>
+              ))}
+            </StyledStatistics>
           </Wrapper>
-          <StyledStatistics>
-            {planet.statistics.map((stat) => (
-              <StyledStat key={stat.title}>
-                <p>{stat.title}</p>
-                <h3>{stat.value}</h3>
-              </StyledStat>
-            ))}
-          </StyledStatistics>
         </>
       ) : null}
     </>
@@ -62,8 +62,6 @@ const Planet = () => {
 };
 
 export const StyledStatistics = styled.ul`
-  margin-top: 2.8rem;
-
   display: grid;
   gap: 0.8rem;
 `;

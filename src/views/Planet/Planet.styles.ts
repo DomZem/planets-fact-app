@@ -3,12 +3,13 @@ import { type planetNameType } from '../../types/planet';
 import { type nameColorType } from '../../types/theme';
 
 export const Wrapper = styled.div`
-  min-height: calc(100vh - 12rem);
+  padding: 2.4rem;
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(32vh, 1fr) 23.5rem;
-  gap: 2.8rem;
+  grid-template-rows: minmax(32vh, 1fr) 23.5rem auto;
+
+  gap: 2.4rem;
 `;
 
 export const StyledSwitchContentButtons = styled.div`
@@ -30,8 +31,6 @@ export const StyledSwitchContentButtons = styled.div`
 `;
 
 export const StyledImageWrapper = styled.div`
-  grid-row: 1/2;
-
   padding: 2.8rem 0;
 
   display: flex;
@@ -44,8 +43,6 @@ export const StyledImage = styled.img<{ planetName: planetNameType }>`
 `;
 
 export const StyledDescription = styled.div`
-  grid-row: 2/3;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
