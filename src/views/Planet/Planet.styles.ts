@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { Divider } from '../../components/atoms/Divider/Divider';
 import { type nameColorType } from '../../types/theme';
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  padding: 5.1rem 2.4rem 4.7rem 2.4rem;
+`;
 
 export const StyledSwitchContentButtons = styled.div`
   position: fixed;

@@ -5,7 +5,8 @@ export interface themeType {
   fonts: {
     antonio: string;
     spartan: string;
-  }
+  };
+  planetsMaxSize: Record<planetNameType, string>;
 }
 
 export type primaryNameCOlorType =

@@ -21,4 +21,15 @@ export const theme: themeType = {
     spartan: 'Spartan, sans-serif',
     antonio: 'Antonio, sans-serif',
   },
+  // Every planet have different max size because that mirrors its size in the solar system
+  planetsMaxSize: {
+    mercury: '33.945%',
+    venus: '47.095%',
+    earth: '52.909%',
+    mars: '39.45%',
+    jupiter: '68.505%',
+    saturn: '78.29%',
+    uranus: '53.823%',
+    neptune: '52.906%',
+  },
 };
