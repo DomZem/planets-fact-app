@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Divider } from '../../atoms/Divider/Divider';
 
 export const Wrapper = styled.header`
   position: fixed;
@@ -13,17 +12,11 @@ export const Wrapper = styled.header`
   align-items: center;
 
   padding: 0 1.9rem 0 2.4rem; // 1.9rem on the right site, beasue toggle button have 0.5rem
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   background-color: ${({ theme }) => theme.colors.federalBlue};
 
   z-index: 990;
-
-  ${Divider} {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
 
   @media (min-width: 768px) {
     height: 16rem;
@@ -47,12 +40,7 @@ export const Wrapper = styled.header`
 `;
 
 export const StyledTitle = styled.h1`
-  font-family: ${({ theme }) => theme.fonts.antonio};
-  font-weight: 400;
   font-size: 2.8rem;
   line-height: 3.6rem;
   letter-spacing: -1.05px;
-  text-transform: uppercase;
-
-  color: ${({ theme }) => theme.colors.white};
 `;

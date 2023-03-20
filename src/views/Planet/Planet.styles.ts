@@ -3,7 +3,7 @@ import { type planetNameType } from '../../types/planet';
 
 export const Wrapper = styled.div`
   min-height: 100%;
-  max-width: 111rem;
+  max-width: 124rem;
   margin: 0 auto;
 
   display: grid;
@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
     padding-top: 12.6rem;
 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 32.6rem 1fr auto;
+    grid-template-rows: 34rem 1fr auto;
   }
 `;
 
@@ -70,14 +70,8 @@ export const StyledDescription = styled.div`
 `;
 
 export const StyledTitle = styled.h2`
-  font-family: ${({ theme }) => theme.fonts.antonio};
-  font-weight: 400;
   font-size: 4rem;
   line-height: 5.2rem;
-
-  text-transform: uppercase;
-
-  color: ${({ theme }) => theme.colors.white};
 
   @media (min-width: 768px) {
     font-size: 4.8rem;

@@ -1,5 +1,4 @@
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
-import { Divider } from '../../atoms/Divider/Divider';
 import DesktopMenu from '../../molecules/DesktopMenu/DesktopMenu';
 import MobileMenu from '../MobileMenu/MobileMenu';
 import { StyledTitle, Wrapper } from './Header.styles';
@@ -11,7 +10,6 @@ const Header = () => {
     <Wrapper>
       <StyledTitle>the planets</StyledTitle>
       {isBrakepoint ? <MobileMenu /> : <DesktopMenu />}
-      <Divider />
     </Wrapper>
   );
 };

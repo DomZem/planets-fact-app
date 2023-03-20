@@ -73,7 +73,7 @@ export const StyledStatistics = styled.ul`
   }
 
   @media (min-width: 1024px) {
-    gap: 3rem;
+    gap: 2.4rem;
   }
 `;
 
@@ -92,16 +92,11 @@ export const StyledStat = styled.li`
   }
 
   p {
-    font-family: ${({ theme }) => theme.fonts.spartan};
-    font-style: normal;
     font-weight: 700;
     font-size: 0.8rem;
-    line-height: 200%;
 
     letter-spacing: 0.727273px;
     text-transform: uppercase;
-
-    color: ${({ theme }) => theme.colors.white};
 
     opacity: 0.5;
 
@@ -114,14 +109,8 @@ export const StyledStat = styled.li`
   }
 
   h3 {
-    font-family: ${({ theme }) => theme.fonts.antonio};
-    font-weight: 400;
     font-size: 2rem;
-
     letter-spacing: -0.75px;
-    text-transform: uppercase;
-
-    color: ${({ theme }) => theme.colors.white};
 
     @media (min-width: 768px) {
       font-size: 2.4rem;

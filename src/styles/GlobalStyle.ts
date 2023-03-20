@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
     background-repeat: no-repeat;
     background-size: cover;
   }
+  
   p {
     font-family: ${({ theme }) => theme.fonts.spartan};
     font-size: 1.1rem;
@@ -31,6 +32,13 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
       font-size: 1.4rem;
       line-height: 179%;
     }
+  }
+  
+  h1, h2, h3 {
+    font-family: ${({ theme }) => theme.fonts.antonio};
+    font-weight: 400;
+    text-transform: uppercase;
+    color: ${({ theme }) => theme.colors.white};
   }
 
   li {
