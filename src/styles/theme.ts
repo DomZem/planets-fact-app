@@ -43,15 +43,5 @@ export const theme: themeType = {
       uranus: '29rem',
       neptune: '28.5rem',
     },
-    desktop: {
-      mercury: '29rem',
-      venus: '40rem',
-      earth: '45rem',
-      mars: '33.6rem',
-      jupiter: '58.2rem',
-      saturn: '66rem',
-      uranus: '45.8rem',
-      neptune: '45rem',
-    },
   },
 };

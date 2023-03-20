@@ -9,7 +9,6 @@ export interface themeType {
   planetsMaxSize: {
     mobile: Record<planetNameType, string>;
     tablet: Record<planetNameType, string>;
-    desktop: Record<planetNameType, string>;
   };
 }
 

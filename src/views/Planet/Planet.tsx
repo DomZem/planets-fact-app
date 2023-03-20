@@ -71,6 +71,10 @@ export const StyledStatistics = styled.ul`
     grid-template-columns: repeat(auto-fit, minmax(16.4rem, 1fr));
     gap: 1.1rem;
   }
+
+  @media (min-width: 1024px) {
+    gap: 3rem;
+  }
 `;
 
 export const StyledStat = styled.li`
@@ -100,6 +104,13 @@ export const StyledStat = styled.li`
     color: ${({ theme }) => theme.colors.white};
 
     opacity: 0.5;
+
+    @media (min-width: 1024px) {
+      font-size: 1.1rem;
+      line-height: 2.5rem;
+
+      letter-spacing: 1px;
+    }
   }
 
   h3 {
@@ -115,6 +126,11 @@ export const StyledStat = styled.li`
     @media (min-width: 768px) {
       font-size: 2.4rem;
       letter-spacing: -0.9px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 4rem;
+      letter-spacing: -1.5px;
     }
   }
 `;

@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
 
     @media (min-width: 1024px) {
       font-size: 1.4rem;
-      line-height: 2.5rem;
+      line-height: 179%;
     }
   }
 
