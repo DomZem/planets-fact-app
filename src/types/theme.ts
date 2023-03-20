@@ -6,7 +6,11 @@ export interface themeType {
     antonio: string;
     spartan: string;
   };
-  planetsMaxSize: Record<planetNameType, string>;
+  planetsMaxSize: {
+    mobile: Record<planetNameType, string>;
+    tablet: Record<planetNameType, string>;
+    desktop: Record<planetNameType, string>;
+  };
 }
 
 export type primaryNameCOlorType =

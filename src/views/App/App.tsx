@@ -15,8 +15,8 @@ const App = () => (
 );
 
 const StyledMain = styled.main`
+  height: 100vh;
   padding-top: 12rem;
-  color: ${({ theme }) => theme.colors.white};
 
   @media (min-width: 768px) {
     padding-top: 16rem;

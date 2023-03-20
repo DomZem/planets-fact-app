@@ -17,6 +17,10 @@ export const Wrapper = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
   background-color: ${({ theme }) => theme.colors.federalBlue};
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const StyledButton = styled.button<{

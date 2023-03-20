@@ -64,15 +64,28 @@ const Planet = () => {
 export const StyledStatistics = styled.ul`
   display: grid;
   gap: 0.8rem;
+
+  @media (min-width: 768px) {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    grid-template-columns: repeat(auto-fit, minmax(16.4rem, 1fr));
+    gap: 1.1rem;
+  }
 `;
 
 export const StyledStat = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.6rem;
 
   padding: 1.6rem 2.4rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
   p {
     font-family: ${({ theme }) => theme.fonts.spartan};
@@ -98,6 +111,11 @@ export const StyledStat = styled.li`
     text-transform: uppercase;
 
     color: ${({ theme }) => theme.colors.white};
+
+    @media (min-width: 768px) {
+      font-size: 2.4rem;
+      letter-spacing: -0.9px;
+    }
   }
 `;
 export default Planet;
