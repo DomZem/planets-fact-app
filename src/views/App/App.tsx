@@ -1,30 +1,13 @@
-import styled, { ThemeProvider } from 'styled-components';
-import Header from '../../components/organisms/Header/Header';
-import { GlobalStyle } from '../../styles/GlobalStyle';
-import { theme } from '../../styles/theme';
+import MainTemplate from '../../components/templates/MainTemplate/MainTemplate';
+import AppProviders from '../../providers/AppProviders';
 import Planet from '../Planet/Planet';
 
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Header />
-    <StyledMain>
+  <AppProviders>
+    <MainTemplate>
       <Planet />
-    </StyledMain>
-  </ThemeProvider>
+    </MainTemplate>
+  </AppProviders>
 );
-
-const StyledMain = styled.main`
-  height: 100vh;
-  padding-top: 12rem;
-
-  @media (min-width: 768px) {
-    padding-top: 16rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding-top: 8.6rem;
-  }
-`;
 
 export default App;
