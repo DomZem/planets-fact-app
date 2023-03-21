@@ -17,16 +17,13 @@ export const Wrapper = styled.button<{
   text-transform: uppercase;
   text-align: left;
 
-  border-color: ${({ theme, nameColor, isActive }) =>
-    isActive && theme.colors[nameColor]};
-  background-color: ${({ theme, nameColor, isActive }) =>
-    isActive ? theme.colors[nameColor] : 'transparent'};
+  border-color: ${({ theme, nameColor, isActive }) => isActive && theme.colors[nameColor]};
+  background-color: ${({ theme, nameColor, isActive }) => (isActive ? theme.colors[nameColor] : 'transparent')};
   color: ${({ theme }) => theme.colors.white};
   transition: all 0.25s ease-in;
 
   &:hover {
-    background-color: ${({ theme, nameColor, isActive }) =>
-      !isActive && '#b6b6b6'};
+    background-color: ${({ theme, nameColor, isActive }) => !isActive && '#b6b6b6'};
   }
   span {
     margin-right: 1.4rem;

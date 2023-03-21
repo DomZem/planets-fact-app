@@ -1,9 +1,6 @@
 import { type FC } from 'react';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
-import {
-  type contentNameType,
-  type planetNameType,
-} from '../../../types/planet';
+import { type contentNameType, type planetNameType } from '../../../types/planet';
 import PrimaryButton from '../../atoms/PrimaryButton/PrimaryButton';
 import { StyledButton, Wrapper } from './SwitchContentButtons.styles';
 
@@ -33,11 +30,7 @@ const contents: contentsType[] = [
   },
 ];
 
-const SwitchContentButtons: FC<SwitchContentButtonsProps> = ({
-  planetName,
-  contentName,
-  handleSetContentName,
-}) => {
+const SwitchContentButtons: FC<SwitchContentButtonsProps> = ({ planetName, contentName, handleSetContentName }) => {
   const isBreakpoint = useMediaQuery(767);
   return (
     <Wrapper>

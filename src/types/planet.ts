@@ -25,12 +25,4 @@ export interface planetType {
 
 export type contentNameType = 'overview' | 'structure' | 'surface';
 
-export type planetNameType =
-  | 'mercury'
-  | 'venus'
-  | 'earth'
-  | 'mars'
-  | 'jupiter'
-  | 'saturn'
-  | 'uranus'
-  | 'neptune';
+export type planetNameType = 'mercury' | 'venus' | 'earth' | 'mars' | 'jupiter' | 'saturn' | 'uranus' | 'neptune';

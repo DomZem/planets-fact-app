@@ -4,13 +4,7 @@ import SourceLink from '../../components/atoms/SourceLink/SourceLink';
 import SwitchContentButtons from '../../components/molecules/SwitchContentButtons/SwitchContentButtons';
 import { usePlanet } from '../../hooks/usePlanet';
 import { type contentNameType } from '../../types/planet';
-import {
-  StyledDescription,
-  StyledImage,
-  StyledImageWrapper,
-  StyledTitle,
-  Wrapper,
-} from './Planet.styles';
+import { StyledDescription, StyledImage, StyledImageWrapper, StyledTitle, Wrapper } from './Planet.styles';
 
 const Planet = () => {
   const { planet, error } = usePlanet();
@@ -34,24 +28,15 @@ const Planet = () => {
             <StyledImageWrapper>
               <StyledImage
                 planetName={planet.name}
-                src={
-                  contentName === 'structure'
-                    ? planet.images.structure.url
-                    : planet.images.overview.url
-                }
+                src={contentName === 'structure' ? planet.images.structure.url : planet.images.overview.url}
               />
-              {contentName === 'surface' && (
-                <StyledSurfaceImage src={planet.images.surface.url} />
-              )}
+              {contentName === 'surface' && <StyledSurfaceImage src={planet.images.surface.url} />}
             </StyledImageWrapper>
 
             <StyledDescription>
               <StyledTitle>{planet.name}</StyledTitle>
               <p>{planet[contentName].content}</p>
-              <SourceLink
-                sourceName="Wikipedia"
-                source={planet[contentName].source}
-              />
+              <SourceLink sourceName="Wikipedia" source={planet[contentName].source} />
             </StyledDescription>
             <StyledStatistics>
               {planet.statistics.map((stat) => (

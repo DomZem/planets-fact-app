@@ -8,11 +8,7 @@ interface SourceLinkProps {
   source: string;
 }
 
-const SourceLink: FC<SourceLinkProps> = ({
-  source,
-  text = 'Source',
-  sourceName,
-}) => {
+const SourceLink: FC<SourceLinkProps> = ({ source, text = 'Source', sourceName }) => {
   return (
     <Wrapper>
       {text}:

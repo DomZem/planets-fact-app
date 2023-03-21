@@ -12,10 +12,6 @@ export interface themeType {
   };
 }
 
-export type primaryNameCOlorType =
-  | 'federalBlue'
-  | 'slightGray'
-  | 'white'
-  | 'darkGray';
+export type primaryNameCOlorType = 'federalBlue' | 'slightGray' | 'white' | 'darkGray';
 
 export type nameColorType = primaryNameCOlorType | planetNameType;

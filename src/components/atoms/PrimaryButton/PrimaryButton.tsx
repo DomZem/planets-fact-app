@@ -10,13 +10,7 @@ interface PrimaryButtonProps {
   spanText?: string;
 }
 
-const PrimaryButton: FC<PrimaryButtonProps> = ({
-  nameColor,
-  isActive,
-  onClick,
-  children,
-  spanText,
-}) => (
+const PrimaryButton: FC<PrimaryButtonProps> = ({ nameColor, isActive, onClick, children, spanText }) => (
   <Wrapper nameColor={nameColor} isActive={isActive} onClick={onClick}>
     {spanText != null && <span>{spanText}</span>}
     {children}
