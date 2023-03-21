@@ -27,11 +27,13 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledImageWrapper = styled.div`
-  padding: 2.8rem 0;
+  position: relative;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 2.8rem 0;
 
   @media (min-width: 768px) {
     grid-column: 1/-1;

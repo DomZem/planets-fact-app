@@ -34,8 +34,15 @@ const Planet = () => {
             <StyledImageWrapper>
               <StyledImage
                 planetName={planet.name}
-                src={planet.images.overview.url}
+                src={
+                  contentName === 'structure'
+                    ? planet.images.structure.url
+                    : planet.images.overview.url
+                }
               />
+              {contentName === 'surface' && (
+                <StyledSurfaceImage src={planet.images.surface.url} />
+              )}
             </StyledImageWrapper>
 
             <StyledDescription>
@@ -60,6 +67,15 @@ const Planet = () => {
     </>
   );
 };
+
+export const StyledSurfaceImage = styled.img`
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  max-width: 15%;
+  transform: translateX(-50%);
+  z-index: 1;
+`;
 
 export const StyledStatistics = styled.ul`
   display: grid;

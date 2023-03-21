@@ -18,6 +18,8 @@ export const Wrapper = styled.div`
 
   background-color: ${({ theme }) => theme.colors.federalBlue};
 
+  z-index: 800;
+
   @media (min-width: 768px) {
     grid-column: 2/3;
     grid-row: 2/3;

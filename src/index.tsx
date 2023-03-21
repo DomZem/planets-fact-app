@@ -12,7 +12,7 @@ import Planet from './views/Planet/Planet';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path=":planetName" element={<Planet />} />
+      <Route path="/:planetName" element={<Planet />} />
     </Route>
   )
 );
