@@ -19,7 +19,27 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.federalBlue};
 
   @media (min-width: 768px) {
-    display: none;
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    position: static;
+    height: auto;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.6rem;
+
+    border: none;
+    padding: 0;
+
+    background-color: transparent;
+  }
+
+  @media (min-width: 1024px) {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    justify-content: flex-start;
   }
 `;
 
@@ -47,7 +67,6 @@ export const StyledButton = styled.button<{
   text-transform: uppercase;
 
   color: ${({ theme }) => theme.colors.white};
-  cursor: pointer;
 
   opacity: ${({ isActive }) => (isActive ? 1 : 0.5)};
 

@@ -48,4 +48,8 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   a {
     text-decoration: none;
   }
+
+  button {
+    cursor: pointer;
+  }
 `;

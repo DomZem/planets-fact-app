@@ -1,8 +1,10 @@
 import { type FC } from 'react';
+import { useMediaQuery } from '../../../hooks/useMediaQuery';
 import {
   type contentNameType,
   type planetNameType,
 } from '../../../types/planet';
+import PrimaryButton from '../../atoms/PrimaryButton/PrimaryButton';
 import { StyledButton, Wrapper } from './SwitchContentButtons.styles';
 
 interface SwitchContentButtonsProps {
@@ -36,20 +38,35 @@ const SwitchContentButtons: FC<SwitchContentButtonsProps> = ({
   contentName,
   handleSetContentName,
 }) => {
+  const isBreakpoint = useMediaQuery(767);
   return (
     <Wrapper>
-      {contents.map(({ value }) => (
-        <StyledButton
-          isActive={contentName === value}
-          color={planetName}
-          onClick={() => {
-            handleSetContentName(value);
-          }}
-          key={value}
-        >
-          {value}
-        </StyledButton>
-      ))}
+      {contents.map(({ value, text }, index) =>
+        isBreakpoint ? (
+          <StyledButton
+            isActive={contentName === value}
+            color={planetName}
+            onClick={() => {
+              handleSetContentName(value);
+            }}
+            key={value}
+          >
+            {value}
+          </StyledButton>
+        ) : (
+          <PrimaryButton
+            isActive={contentName === value}
+            key={value}
+            nameColor={planetName}
+            onClick={() => {
+              handleSetContentName(value);
+            }}
+            spanText={`0${index + 1}`}
+          >
+            {text}
+          </PrimaryButton>
+        )
+      )}
     </Wrapper>
   );
 };
