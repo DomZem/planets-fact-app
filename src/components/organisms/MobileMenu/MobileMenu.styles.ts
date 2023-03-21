@@ -21,7 +21,6 @@ export const Wrapper = styled.nav<{ isMenuOpen: boolean }>`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 
   background-color: ${({ theme }) => theme.colors.federalBlue};
 
@@ -33,7 +32,6 @@ export const Wrapper = styled.nav<{ isMenuOpen: boolean }>`
 
 export const StyledLink = styled(NavLink)`
   flex: 1;
-
   display: flex;
   align-items: center;
   gap: 2.4rem;
@@ -49,6 +47,8 @@ export const StyledLink = styled(NavLink)`
   text-transform: uppercase;
 
   color: ${({ theme }) => theme.colors.white};
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in;
 
   & + & {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -57,6 +57,10 @@ export const StyledLink = styled(NavLink)`
   svg {
     margin-left: auto;
     font-size: 2.2rem;
+  }
+
+  &.active {
+    opacity: 1;
   }
 `;
 
