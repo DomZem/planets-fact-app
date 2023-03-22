@@ -4,7 +4,7 @@ import SourceLink from '../../components/atoms/SourceLink/SourceLink';
 import SwitchContentButtons from '../../components/molecules/SwitchContentButtons/SwitchContentButtons';
 import { usePlanet } from '../../hooks/usePlanet';
 import { type contentNameType } from '../../types/planet';
-import { StyledDescription, StyledImage, StyledImageWrapper, StyledTitle, Wrapper } from './Planet.styles';
+import { StyledContent, StyledImage, StyledImageWrapper, StyledTitle, Wrapper } from './Planet.styles';
 
 const Planet = () => {
   const { planet, error } = usePlanet();
@@ -19,12 +19,6 @@ const Planet = () => {
       {!error && planet !== null ? (
         <>
           <Wrapper>
-            <SwitchContentButtons
-              planetName={planet.name}
-              contentName={contentName}
-              handleSetContentName={handleSetContentName}
-            />
-
             <StyledImageWrapper>
               <StyledImage
                 planetName={planet.name}
@@ -33,11 +27,19 @@ const Planet = () => {
               {contentName === 'surface' && <StyledSurfaceImage src={planet.images.surface.url} />}
             </StyledImageWrapper>
 
-            <StyledDescription>
-              <StyledTitle>{planet.name}</StyledTitle>
-              <p>{planet[contentName].content}</p>
-              <SourceLink sourceName="Wikipedia" source={planet[contentName].source} />
-            </StyledDescription>
+            <StyledWrapper>
+              <StyledContent>
+                <StyledTitle>{planet.name}</StyledTitle>
+                <p>{planet[contentName].content}</p>
+                <SourceLink sourceName="Wikipedia" source={planet[contentName].source} />
+              </StyledContent>
+              <SwitchContentButtons
+                planetName={planet.name}
+                contentName={contentName}
+                handleSetContentName={handleSetContentName}
+              />
+            </StyledWrapper>
+
             <StyledStatistics>
               {planet.statistics.map((stat) => (
                 <StyledStat key={stat.title}>
@@ -74,6 +76,7 @@ export const StyledStatistics = styled.ul`
   }
 
   @media (min-width: 1024px) {
+    grid-row: 4/5;
     gap: 2.4rem;
   }
 `;
@@ -90,6 +93,9 @@ export const StyledStat = styled.li`
   @media (min-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  @media (min-width: 1024px) {
   }
 
   p {
@@ -119,9 +125,26 @@ export const StyledStat = styled.li`
     }
 
     @media (min-width: 1024px) {
-      font-size: 4rem;
+      font-size: 3.4rem;
       letter-spacing: -1.5px;
     }
+  }
+`;
+
+export const StyledWrapper = styled.div`
+  display: flex;
+
+  @media (min-width: 768px) {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    gap: 2.4rem;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 3/4;
+    grid-row: 2/3;
   }
 `;
 export default Planet;

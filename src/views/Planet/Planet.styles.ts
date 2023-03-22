@@ -3,7 +3,7 @@ import { type planetNameType } from '../../types/planet';
 
 export const Wrapper = styled.div`
   min-height: 100%;
-  max-width: 124rem;
+  max-width: 144rem;
   margin: 0 auto;
 
   display: grid;
@@ -19,10 +19,9 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 1024px) {
-    padding-top: 12.6rem;
-
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 34rem 1fr auto;
+    grid-template-rows: 1fr 10fr 1fr auto;
+    gap: 0;
   }
 `;
 
@@ -33,8 +32,6 @@ export const StyledImageWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  padding: 2.8rem 0;
-
   @media (min-width: 768px) {
     grid-column: 1/-1;
     grid-row: 1/2;
@@ -42,21 +39,19 @@ export const StyledImageWrapper = styled.div`
 
   @media (min-width: 1024px) {
     grid-column: 1/3;
-    grid-row: 1/3;
+    grid-row: 2/3;
   }
 `;
 
 export const StyledImage = styled.img<{ planetName: planetNameType }>`
-  max-width: ${({ theme, planetName }) =>
-    theme.planetsMaxSize.mobile[planetName]};
+  max-width: ${({ theme, planetName }) => theme.planetsMaxSize.mobile[planetName]};
 
   @media (min-width: 768px) {
-    max-width: ${({ theme, planetName }) =>
-      theme.planetsMaxSize.tablet[planetName]};
+    max-width: ${({ theme, planetName }) => theme.planetsMaxSize.tablet[planetName]};
   }
 `;
 
-export const StyledDescription = styled.div`
+export const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -66,8 +61,14 @@ export const StyledDescription = styled.div`
   text-align: center;
 
   @media (min-width: 768px) {
+    max-width: 48.7%;
     align-items: flex-start;
     text-align: left;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 100%;
+    height: 34rem;
   }
 `;
 

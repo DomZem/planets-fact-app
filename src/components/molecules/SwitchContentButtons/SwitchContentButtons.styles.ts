@@ -21,9 +21,7 @@ export const Wrapper = styled.div`
   z-index: 800;
 
   @media (min-width: 768px) {
-    grid-column: 2/3;
-    grid-row: 2/3;
-
+    flex: 1;
     position: static;
     height: auto;
 
@@ -39,9 +37,7 @@ export const Wrapper = styled.div`
   }
 
   @media (min-width: 1024px) {
-    grid-column: 3/4;
-    grid-row: 2/3;
-    justify-content: flex-start;
+    flex: 0;
   }
 `;
 
