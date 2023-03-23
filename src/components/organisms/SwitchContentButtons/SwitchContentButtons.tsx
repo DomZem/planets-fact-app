@@ -1,11 +1,14 @@
 import { type FC } from 'react';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
-import { type contentNameType, type planetNameType } from '../../../types/planet';
-import PrimaryButton from '../../atoms/PrimaryButton/PrimaryButton';
-import { StyledButton, Wrapper } from './SwitchContentButtons.styles';
+import { type contentNameType } from '../../../types/planet';
+import { type colorType } from '../../../types/theme';
+import PrimaryButton from '../../molecules/PrimaryButton/PrimaryButton';
+import SecondaryButton from '../../molecules/SecondaryButton/SecondaryButton';
+
+import { Wrapper } from './SwitchContentButtons.styles';
 
 interface SwitchContentButtonsProps {
-  planetName: planetNameType;
+  color: colorType;
   contentName: contentNameType;
   handleSetContentName: (content: contentNameType) => void;
 }
@@ -30,27 +33,27 @@ const contents: contentsType[] = [
   },
 ];
 
-const SwitchContentButtons: FC<SwitchContentButtonsProps> = ({ planetName, contentName, handleSetContentName }) => {
+const SwitchContentButtons: FC<SwitchContentButtonsProps> = ({ color, contentName, handleSetContentName }) => {
   const isBreakpoint = useMediaQuery(767);
   return (
     <Wrapper>
       {contents.map(({ value, text }, index) =>
         isBreakpoint ? (
-          <StyledButton
+          <SecondaryButton
             isActive={contentName === value}
-            color={planetName}
+            color={color}
             onClick={() => {
               handleSetContentName(value);
             }}
             key={value}
           >
             {value}
-          </StyledButton>
+          </SecondaryButton>
         ) : (
           <PrimaryButton
             isActive={contentName === value}
             key={value}
-            nameColor={planetName}
+            color={color}
             onClick={() => {
               handleSetContentName(value);
             }}

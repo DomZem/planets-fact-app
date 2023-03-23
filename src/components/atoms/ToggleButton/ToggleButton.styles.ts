@@ -15,7 +15,7 @@ export const StyledLine = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Wrapper = styled.button<{ isOpen: boolean }>`
+export const ButtonWrapper = styled.button<{ isOpen: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -29,8 +29,8 @@ export const Wrapper = styled.button<{ isOpen: boolean }>`
   cursor: pointer;
 
   & > ${StyledLine} {
-    transition-duration: 0.25s;
     transition-property: opacity, transform;
+    transition-duration: 0.25s;
     transition-timing-function: ease-in-out;
   }
 

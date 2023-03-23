@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { type planetNameType } from '../../../types/planet';
+import { type colorType } from '../../../types/theme';
 
 const openNav = css`
   transform: translateX(0);
@@ -10,17 +10,17 @@ const closeNav = css`
   transform: translateX(-100%);
 `;
 
-export const Wrapper = styled.nav<{ isMenuOpen: boolean }>`
+export const NavWrapper = styled.nav<{ isMenuOpen: boolean }>`
   position: fixed;
   top: 6.9rem;
   left: 0;
   right: 0;
   bottom: 0;
 
-  padding: 2.4rem;
-
   display: flex;
   flex-direction: column;
+
+  padding: 2.4rem;
 
   background-color: ${({ theme }) => theme.colors.federalBlue};
 
@@ -41,12 +41,11 @@ export const StyledLink = styled(NavLink)`
   font-family: ${({ theme }) => theme.fonts.spartan};
   font-weight: 700;
   font-size: 1.5rem;
-  line-height: 167%;
-
-  letter-spacing: 1.36364px;
-  text-transform: uppercase;
-
   color: ${({ theme }) => theme.colors.white};
+  text-transform: uppercase;
+  line-height: 167%;
+  letter-spacing: 1.4px;
+
   opacity: 0.5;
   transition: opacity 0.2s ease-in;
 
@@ -64,11 +63,10 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 
-export const StyledPlanetIcon = styled.div<{ planetName: planetNameType }>`
+export const StyledPlanetIcon = styled.div<{ color: colorType }>`
   width: 2rem;
   height: 2rem;
-
   border-radius: 100%;
 
-  background-color: ${({ theme, planetName }) => theme.colors[planetName]};
+  background-color: ${({ theme, color }) => theme.colors[color]};
 `;

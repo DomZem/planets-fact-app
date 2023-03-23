@@ -10,9 +10,9 @@ export const Wrapper = styled.p`
 export const StyledLink = styled.a`
   display: inline-flex;
   align-items: center;
+  gap: 0.4rem;
 
   margin-left: 0.5rem;
-  gap: 0.4rem;
 
   color: ${({ theme }) => theme.colors.white};
   text-decoration: underline;

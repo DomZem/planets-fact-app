@@ -1,7 +1,7 @@
 import { type planetNameType } from './planet';
 
 export interface themeType {
-  colors: Record<nameColorType, string>;
+  colors: Record<colorType, string>;
   fonts: {
     antonio: string;
     spartan: string;
@@ -9,9 +9,10 @@ export interface themeType {
   planetsMaxSize: {
     mobile: Record<planetNameType, string>;
     tablet: Record<planetNameType, string>;
+    desktop: Record<planetNameType, string>;
   };
 }
 
-export type primaryNameCOlorType = 'federalBlue' | 'slightGray' | 'white' | 'darkGray';
+export type primaryColorType = 'federalBlue' | 'slightGray' | 'white' | 'darkGray';
 
-export type nameColorType = primaryNameCOlorType | planetNameType;
+export type colorType = primaryColorType | planetNameType;

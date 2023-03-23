@@ -4,27 +4,28 @@ import { type themeType } from '../types/theme';
 export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   html {
     box-sizing: border-box;
+    
     font-size: 62.5%;
   }
 
   *, *::before, *::after {
     box-sizing: inherit;
+    
     margin: 0;
     padding: 0;
   }
 
   body {
-	  background-image: url('../../public/assets/images/background-stars.svg');
     background-color: ${({ theme }) => theme.colors.federalBlue}; 
+	  background-image: url('../../public/assets/images/background-stars.svg');
     background-repeat: no-repeat;
     background-size: cover;
   }
   
   p {
     font-family: ${({ theme }) => theme.fonts.spartan};
-    font-size: 1.1rem;
     font-weight: 400;
-    
+    font-size: 1.1rem;
     color: ${({ theme }) => theme.colors.white};
     line-height: 200%;
 
@@ -37,8 +38,8 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   h1, h2, h3 {
     font-family: ${({ theme }) => theme.fonts.antonio};
     font-weight: 400;
-    text-transform: uppercase;
     color: ${({ theme }) => theme.colors.white};
+    text-transform: uppercase;
   }
 
   li {
@@ -50,6 +51,15 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   }
 
   button {
+    border: none;
+
+    font-family: ${({ theme }) => theme.fonts.spartan};
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: ${({ theme }) => theme.colors.white};
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
     cursor: pointer;
   }
 `;

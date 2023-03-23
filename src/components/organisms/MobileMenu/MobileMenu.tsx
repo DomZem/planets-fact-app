@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { BiChevronRight } from 'react-icons/bi';
 import { planets } from '../../../constants';
 import ToggleButton from '../../atoms/ToggleButton/ToggleButton';
-import { StyledLink, StyledPlanetIcon, Wrapper } from './MobileMenu.styles';
+import { NavWrapper, StyledLink, StyledPlanetIcon } from './MobileMenu.styles';
 
 const MobileMenu = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
@@ -14,15 +14,15 @@ const MobileMenu = () => {
   return (
     <>
       <ToggleButton isOpen={isOpenMenu} onClick={handleToggleMenu} />
-      <Wrapper isMenuOpen={isOpenMenu}>
+      <NavWrapper isMenuOpen={isOpenMenu}>
         {planets.map((name) => (
           <StyledLink key={name} to={`${name}`}>
-            <StyledPlanetIcon planetName={name} />
+            <StyledPlanetIcon color={name} />
             {name}
             <BiChevronRight />
           </StyledLink>
         ))}
-      </Wrapper>
+      </NavWrapper>
     </>
   );
 };

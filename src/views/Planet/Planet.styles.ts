@@ -2,20 +2,19 @@ import styled from 'styled-components';
 import { type planetNameType } from '../../types/planet';
 
 export const Wrapper = styled.div`
-  min-height: 100%;
-  max-width: 144rem;
-  margin: 0 auto;
-
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: minmax(30.1rem, 1fr) 27rem auto;
+  grid-template-rows: minmax(30.1rem, 1fr) auto auto;
   gap: 2.4rem;
 
+  max-width: 144rem;
+  min-height: 100%;
   padding: 2.4rem;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: minmax(41rem, 1fr) 25.3rem auto;
+    grid-template-rows: minmax(41rem, 1fr) auto auto;
   }
 
   @media (min-width: 1024px) {
@@ -29,8 +28,8 @@ export const StyledImageWrapper = styled.div`
   position: relative;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   @media (min-width: 768px) {
     grid-column: 1/-1;
@@ -49,6 +48,39 @@ export const StyledImage = styled.img<{ planetName: planetNameType }>`
   @media (min-width: 768px) {
     max-width: ${({ theme, planetName }) => theme.planetsMaxSize.tablet[planetName]};
   }
+
+  @media (min-width: 1024px) {
+    max-width: ${({ theme, planetName }) => theme.planetsMaxSize.desktop[planetName]};
+  }
+`;
+
+export const StyledSurfaceImage = styled.img`
+  position: absolute;
+  left: 50%;
+  top: 58%;
+
+  max-width: 15%;
+
+  transform: translateX(-50%);
+  z-index: 1;
+`;
+
+export const StyledContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    gap: 2.4rem;
+  }
+
+  @media (min-width: 1024px) {
+    grid-column: 3/4;
+    grid-row: 2/3;
+
+    flex-direction: column;
+  }
 `;
 
 export const StyledContent = styled.div`
@@ -58,17 +90,23 @@ export const StyledContent = styled.div`
   align-items: center;
   gap: 1.6rem;
 
+  max-width: 40rem;
+  height: 27rem;
+
   text-align: center;
 
   @media (min-width: 768px) {
-    max-width: 48.7%;
     align-items: flex-start;
+
+    max-width: 48.7%;
+    height: 25rem;
+
     text-align: left;
   }
 
   @media (min-width: 1024px) {
     max-width: 100%;
-    height: 34rem;
+    height: 32rem;
   }
 `;
 

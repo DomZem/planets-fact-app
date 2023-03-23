@@ -3,12 +3,12 @@ import { FaExternalLinkSquareAlt } from 'react-icons/fa';
 import { StyledLink, Wrapper } from './SourceLink.styles';
 
 interface SourceLinkProps {
-  text?: string;
-  sourceName: string;
   source: string;
+  sourceName: string;
+  text?: string;
 }
 
-const SourceLink: FC<SourceLinkProps> = ({ source, text = 'Source', sourceName }) => {
+const SourceLink: FC<SourceLinkProps> = ({ source, sourceName, text = 'Source' }) => {
   return (
     <Wrapper>
       {text}:

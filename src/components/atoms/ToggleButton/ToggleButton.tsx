@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { StyledLine, Wrapper } from './ToggleButton.styles';
+import { ButtonWrapper, StyledLine } from './ToggleButton.styles';
 
 interface ToggleButtonProps {
   isOpen: boolean;
@@ -7,11 +7,11 @@ interface ToggleButtonProps {
 }
 
 const ToggleButton: FC<ToggleButtonProps> = ({ isOpen, onClick }) => (
-  <Wrapper isOpen={isOpen} onClick={onClick}>
+  <ButtonWrapper isOpen={isOpen} onClick={onClick}>
     <StyledLine />
     <StyledLine />
     <StyledLine />
-  </Wrapper>
+  </ButtonWrapper>
 );
 
 export default ToggleButton;
