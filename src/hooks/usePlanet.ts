@@ -3,13 +3,18 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { type Params } from 'react-router-dom';
 import { API_URL } from '../api';
-import { type planetType } from '../types/planet';
+import { type planetNameType, type planetType } from '../types/planet';
+
+interface PlanetParams extends Params {
+  planetName: planetNameType;
+}
 
 export const usePlanet = () => {
-  const { planetName } = useParams();
+  const { planetName } = useParams<PlanetParams>();
   const [planet, setPlanet] = useState<planetType | null>(null);
-  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const query = `
 	{
@@ -40,6 +45,7 @@ export const usePlanet = () => {
 	}`;
 
   const getPlanet = async () => {
+    setIsLoading(true);
     try {
       const { data } = await axios.post(
         API_URL,
@@ -56,7 +62,9 @@ export const usePlanet = () => {
       );
       setPlanet(data.data.planetModel);
     } catch (e) {
-      setError(true);
+      setPlanet(null);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -66,6 +74,7 @@ export const usePlanet = () => {
 
   return {
     planet,
-    error,
+    planetName,
+    isLoading,
   };
 };

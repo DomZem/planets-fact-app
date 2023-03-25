@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { type planetNameType } from '../../types/planet';
 
 export const Wrapper = styled.div`
+  position: relative;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(30.1rem, 1fr) auto auto;
