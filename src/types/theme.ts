@@ -1,18 +1,18 @@
-import { type planetNameType } from './planet';
+import { type PlanetNameType } from './planet';
 
-export interface themeType {
-  colors: Record<colorType, string>;
+export interface ThemeType {
+  colors: Record<ColorType, string>;
   fonts: {
     antonio: string;
     spartan: string;
   };
   planetsMaxSize: {
-    mobile: Record<planetNameType, string>;
-    tablet: Record<planetNameType, string>;
-    desktop: Record<planetNameType, string>;
+    mobile: Record<PlanetNameType, string>;
+    tablet: Record<PlanetNameType, string>;
+    desktop: Record<PlanetNameType, string>;
   };
 }
 
-export type primaryColorType = 'federalBlue' | 'slightGray' | 'white' | 'darkGray';
+export type PrimaryColorType = 'federalBlue' | 'slightGray' | 'white' | 'darkGray';
 
-export type colorType = primaryColorType | planetNameType;
+export type ColorType = PrimaryColorType | PlanetNameType;

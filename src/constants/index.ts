@@ -1,6 +1,6 @@
-import { type planetNameType } from '../types/planet';
+import { type PlanetNameType } from '../types/planet';
 
-export const planets: planetNameType[] = [
+export const planets: PlanetNameType[] = [
   'mercury',
   'venus',
   'earth',

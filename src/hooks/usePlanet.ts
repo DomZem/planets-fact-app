@@ -5,15 +5,15 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { type Params } from 'react-router-dom';
 import { API_URL } from '../api';
-import { type planetNameType, type planetType } from '../types/planet';
+import { type PlanetNameType, type PlanetType } from '../types/planet';
 
 interface PlanetParams extends Params {
-  planetName: planetNameType;
+  planetName: PlanetNameType;
 }
 
 export const usePlanet = () => {
   const { planetName } = useParams<PlanetParams>();
-  const [planet, setPlanet] = useState<planetType | null>(null);
+  const [planet, setPlanet] = useState<PlanetType | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const query = `

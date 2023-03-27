@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { type colorType } from '../../../types/theme';
+import { type ColorType } from '../../../types/theme';
 
 const openNav = css`
   transform: translateX(0);
@@ -63,7 +63,7 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 
-export const StyledPlanetIcon = styled.div<{ color: colorType }>`
+export const StyledPlanetIcon = styled.div<{ color: ColorType }>`
   width: 2rem;
   height: 2rem;
   border-radius: 100%;

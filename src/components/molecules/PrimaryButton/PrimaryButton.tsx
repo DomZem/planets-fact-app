@@ -1,9 +1,9 @@
 import { type FC } from 'react';
-import { type colorType } from '../../../types/theme';
+import { type ColorType } from '../../../types/theme';
 import { ButtonWrapper } from './PrimaryButton.styles';
 
 interface PrimaryButtonProps {
-  color: colorType;
+  color: ColorType;
   isActive: boolean;
   children: React.ReactNode;
   onClick: () => void;

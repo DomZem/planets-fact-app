@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { type colorType } from '../../../types/theme';
+import { type ColorType } from '../../../types/theme';
 import { BottomBorder } from '../../atoms/BottomBorder/BottomBorder';
 
 export const ButtonWrapper = styled(BottomBorder)<{
-  color: colorType;
+  color: ColorType;
   isActive: boolean;
 }>`
   display: flex;

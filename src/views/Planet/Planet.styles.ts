@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { type planetNameType } from '../../types/planet';
+import { type PlanetNameType } from '../../types/planet';
 
 export const Wrapper = styled.div`
   display: grid;
@@ -60,7 +60,7 @@ export const StyledImageWrapper = styled.div`
   }
 `;
 
-export const StyledImage = styled.img<{ planetName: planetNameType }>`
+export const StyledImage = styled.img<{ planetName: PlanetNameType }>`
   max-width: ${({ theme, planetName }) => theme.planetsMaxSize.mobile[planetName]};
 
   @media (min-width: 768px) {

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { type colorType } from '../../../types/theme';
+import { type ColorType } from '../../../types/theme';
 import { ViewWrapper } from '../../atoms/ViewWrapper/ViewWrapper';
 
 export const ButtonWrapper = styled(ViewWrapper)<{
-  color: colorType;
+  color: ColorType;
   isActive: boolean;
 }>`
   border-color: ${({ theme, color, isActive }) => isActive && theme.colors[color]};

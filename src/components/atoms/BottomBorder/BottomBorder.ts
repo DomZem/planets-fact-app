@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { type colorType } from '../../../types/theme';
+import { type ColorType } from '../../../types/theme';
 
-export const BottomBorder = styled.div<{ color: colorType }>`
+export const BottomBorder = styled.div<{ color: ColorType }>`
   position: relative;
 
   transition: opacity 0.25s ease-in;

@@ -1,5 +1,5 @@
-export interface planetType {
-  name: planetNameType;
+export interface PlanetType {
+  name: PlanetNameType;
   overview: {
     content: string;
     source: string;
@@ -23,6 +23,6 @@ export interface planetType {
   };
 }
 
-export type contentNameType = 'overview' | 'structure' | 'surface';
+export type ContentNameType = 'overview' | 'structure' | 'surface';
 
-export type planetNameType = 'mercury' | 'venus' | 'earth' | 'mars' | 'jupiter' | 'saturn' | 'uranus' | 'neptune';
+export type PlanetNameType = 'mercury' | 'venus' | 'earth' | 'mars' | 'jupiter' | 'saturn' | 'uranus' | 'neptune';

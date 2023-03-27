@@ -5,7 +5,7 @@ import StatisticsList from '../../components/organisms/StatisticsList/Statistics
 import SwitchContentButtons from '../../components/organisms/SwitchContentButtons/SwitchContentButtons';
 
 import { usePlanet } from '../../hooks/usePlanet';
-import { type contentNameType } from '../../types/planet';
+import { type ContentNameType } from '../../types/planet';
 import {
   StyledContent,
   StyledContentWrapper,
@@ -19,9 +19,9 @@ import {
 
 const Planet = () => {
   const { planet, planetName, isLoading } = usePlanet();
-  const [contentName, setContentName] = useState<contentNameType>('overview');
+  const [contentName, setContentName] = useState<ContentNameType>('overview');
 
-  const handleSetContentName = (contentName: contentNameType) => {
+  const handleSetContentName = (contentName: ContentNameType) => {
     setContentName(contentName);
   };
 

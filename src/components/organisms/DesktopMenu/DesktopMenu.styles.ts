@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { type colorType } from '../../../types/theme';
+import { type ColorType } from '../../../types/theme';
 import { BottomBorder } from '../../atoms/BottomBorder/BottomBorder';
 
 export const NavWrapper = styled.nav`
@@ -19,7 +19,7 @@ export const NavWrapper = styled.nav`
   }
 `;
 
-export const StyledLink = styled(BottomBorder)<{ color: colorType }>`
+export const StyledLink = styled(BottomBorder)<{ color: ColorType }>`
   display: flex;
   align-items: center;
 

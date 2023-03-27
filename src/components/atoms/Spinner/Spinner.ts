@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { type colorType } from '../../../types/theme';
+import { type ColorType } from '../../../types/theme';
 
-export const Spinner = styled.div<{ color: colorType }>`
+export const Spinner = styled.div<{ color: ColorType }>`
   position: fixed;
   top: calc(50% - 2.5rem);
   left: calc(50% - 2.5rem);

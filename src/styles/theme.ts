@@ -1,6 +1,6 @@
-import { type themeType } from '../types/theme';
+import { type ThemeType } from '../types/theme';
 
-export const theme: themeType = {
+export const theme: ThemeType = {
   colors: {
     federalBlue: '#070724', // background
     slightGray: '#5C677D', // paragraphs, button text, border, links
