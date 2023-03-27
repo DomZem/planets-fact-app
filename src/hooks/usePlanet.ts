@@ -64,7 +64,9 @@ export const usePlanet = () => {
     } catch (e) {
       setPlanet(null);
     } finally {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
     }
   };
 
