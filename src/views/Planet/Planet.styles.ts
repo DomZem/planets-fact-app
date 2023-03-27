@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { type planetNameType } from '../../types/planet';
 
 export const Wrapper = styled.div`
-  position: relative;
-
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(30.1rem, 1fr) auto auto;
@@ -14,9 +12,24 @@ export const Wrapper = styled.div`
   padding: 2.4rem;
   margin: 0 auto;
 
+  overflow-x: hidden;
+
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: minmax(41rem, 1fr) auto auto;
+
+    animation: showUp 0.7s ease-in-out;
+
+    @keyframes showUp {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
   }
 
   @media (min-width: 1024px) {

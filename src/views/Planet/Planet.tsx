@@ -25,11 +25,11 @@ const Planet = () => {
   };
 
   return (
-    <Wrapper>
+    <>
       {isLoading ? (
         <Spinner color={planetName !== undefined ? planetName : 'white'} />
       ) : planet !== null ? (
-        <>
+        <Wrapper>
           <StyledImageWrapper>
             <StyledImage
               planetName={planet.name}
@@ -52,11 +52,11 @@ const Planet = () => {
           </StyledContentWrapper>
 
           <StatisticsList statistics={planet.statistics} />
-        </>
+        </Wrapper>
       ) : (
         <p>Sorry try maybe later!</p>
       )}
-    </Wrapper>
+    </>
   );
 };
 
