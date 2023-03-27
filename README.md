@@ -1,8 +1,8 @@
-[<img src=".github/planets-fact-app-overview.png" alt="planets fact app - planet overiview" width="100%"/>]
+<img src=".github/planets-fact-app-overview.png" alt="planets fact app - planet overiview" width="100%"/>
 
-[<img src=".github/planets-fact-app-structure.png" alt="planets fact app - structure" width="100%"/>]
+<img src=".github/planets-fact-app-structure.png" alt="planets fact app - structure" width="100%"/>
 
-[<img src=".github/planets-fact-app-surface.png" alt="planets fact app - planet surface" width="100%"/>]
+<img src=".github/planets-fact-app-surface.png" alt="planets fact app - planet surface" width="100%"/>
 
 <h2 align="left">Planets fact - the application contains the most important information about each planet of the solar system</h4>
 <h3 align='left'>About project 🔍</h3> 
