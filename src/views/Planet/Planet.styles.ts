@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   max-width: 144rem;
   min-height: 100%;
   padding: 2.4rem;
+  padding-top: 5.2rem; // The same height like SecondaryButton + 1px border
   margin: 0 auto;
 
   overflow-x: hidden;
@@ -17,6 +18,8 @@ export const Wrapper = styled.div`
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: minmax(41rem, 1fr) auto auto;
+
+    padding-top: 2.4rem;
 
     animation: showUp 0.7s ease-in-out;
 
@@ -137,5 +140,23 @@ export const StyledTitle = styled.h2`
   @media (min-width: 1024px) {
     font-size: 8rem;
     line-height: 10.4rem;
+  }
+`;
+
+export const StyledError = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 100%;
+  padding: 2.4rem;
+
+  @media (min-width: 768px) {
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 2.8rem;
   }
 `;
