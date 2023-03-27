@@ -1,24 +1,24 @@
 import { type FC } from 'react';
 import { useMediaQuery } from '../../../hooks/useMediaQuery';
-import { type contentNameType } from '../../../types/planet';
-import { type colorType } from '../../../types/theme';
+import { type ContentNameType } from '../../../types/planet';
+import { type ColorType } from '../../../types/theme';
 import PrimaryButton from '../../molecules/PrimaryButton/PrimaryButton';
 import SecondaryButton from '../../molecules/SecondaryButton/SecondaryButton';
 
 import { Wrapper } from './SwitchContentButtons.styles';
 
 interface SwitchContentButtonsProps {
-  color: colorType;
-  contentName: contentNameType;
-  handleSetContentName: (content: contentNameType) => void;
+  color: ColorType;
+  contentName: ContentNameType;
+  handleSetContentName: (content: ContentNameType) => void;
 }
 
-interface contentsType {
-  value: contentNameType;
+interface ContentsType {
+  value: ContentNameType;
   text: string;
 }
 
-const contents: contentsType[] = [
+const contents: ContentsType[] = [
   {
     value: 'overview',
     text: 'overview',
