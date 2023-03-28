@@ -9,9 +9,10 @@ import { type ContentNameType } from '../../types/planet';
 import {
   StyledContent,
   StyledContentWrapper,
-  StyledError,
+  StyledErrorWrapper,
   StyledImage,
   StyledImageWrapper,
+  StyledSpinnerWrapper,
   StyledSurfaceImage,
   StyledTitle,
   Wrapper,
@@ -26,14 +27,18 @@ const Planet = () => {
   };
 
   if (isLoading) {
-    return <Spinner color={planetName !== undefined ? planetName : 'white'} />;
+    return (
+      <StyledSpinnerWrapper>
+        <Spinner color={planetName !== undefined ? planetName : 'white'} />
+      </StyledSpinnerWrapper>
+    );
   }
 
   if (planet === null) {
     return (
-      <StyledError>
+      <StyledErrorWrapper>
         <h2>Sorry, you are out of the solar system. Try maybe later!</h2>
-      </StyledError>
+      </StyledErrorWrapper>
     );
   }
 

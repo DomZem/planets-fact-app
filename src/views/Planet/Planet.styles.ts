@@ -143,14 +143,18 @@ export const StyledTitle = styled.h2`
   }
 `;
 
-export const StyledError = styled.div`
+export const StyledSpinnerWrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 
   width: 100%;
   height: 100%;
   padding: 2.4rem;
+`;
+
+export const StyledErrorWrapper = styled(StyledSpinnerWrapper)`
+  align-items: flex-start;
 
   @media (min-width: 768px) {
     align-items: center;
