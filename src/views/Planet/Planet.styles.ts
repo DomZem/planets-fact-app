@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { type PlanetNameType } from '../../types/planet';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.article`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(30.1rem, 1fr) auto auto;
@@ -42,7 +42,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const StyledImageWrapper = styled.div`
+export const StyledImageWrapper = styled.section`
   position: relative;
 
   display: flex;
@@ -83,7 +83,7 @@ export const StyledSurfaceImage = styled.img`
   z-index: 1;
 `;
 
-export const StyledContentWrapper = styled.div`
+export const StyledContentWrapper = styled.section`
   display: flex;
   justify-content: center;
 
