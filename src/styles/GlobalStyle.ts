@@ -17,9 +17,6 @@ export const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 
   body {
     background-color: ${({ theme }) => theme.colors.federalBlue}; 
-	  background-image: url('../../src/assets/img/background-stars.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
   }
   
   p {
