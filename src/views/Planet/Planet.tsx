@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SourceLink from '../../components/atoms/SourceLink/SourceLink';
 import { Spinner } from '../../components/atoms/Spinner/Spinner';
 import StatisticsList from '../../components/organisms/StatisticsList/StatisticsList';
@@ -19,12 +19,16 @@ import {
 } from './Planet.styles';
 
 const Planet = () => {
-  const { planet, planetName, isLoading } = usePlanet();
+  const { planet, planetName, isLoading, isError } = usePlanet();
   const [contentName, setContentName] = useState<ContentNameType>('overview');
 
   const handleSetContentName = (contentName: ContentNameType) => {
     setContentName(contentName);
   };
+
+  useEffect(() => {
+    setContentName('overview');
+  }, [planetName]);
 
   if (isLoading) {
     return (
@@ -32,42 +36,46 @@ const Planet = () => {
         <Spinner color={planetName !== undefined ? planetName : 'white'} />
       </StyledSpinnerWrapper>
     );
-  }
+  } else if (isError) {
+    return (
+      <StyledErrorWrapper>
+        <h2>Sorry, we were unable to fetch planet data. Please try again later.</h2>
+      </StyledErrorWrapper>
+    );
+  } else if (planet !== undefined) {
+    return (
+      <Wrapper>
+        <StyledImageWrapper>
+          <StyledImage
+            planetName={planet.name}
+            src={contentName === 'structure' ? planet.images.structure.url : planet.images.overview.url}
+          />
+          {contentName === 'surface' && <StyledSurfaceImage src={planet.images.surface.url} />}
+        </StyledImageWrapper>
 
-  if (planet === null) {
+        <StyledContentWrapper>
+          <StyledContent>
+            <StyledTitle>{planet.name}</StyledTitle>
+            <p>{planet[contentName].content}</p>
+            <SourceLink sourceName="Wikipedia" source={planet[contentName].source} />
+          </StyledContent>
+          <SwitchContentButtons
+            color={planet.name}
+            contentName={contentName}
+            handleSetContentName={handleSetContentName}
+          />
+        </StyledContentWrapper>
+
+        <StatisticsList statistics={planet.statistics} />
+      </Wrapper>
+    );
+  } else {
     return (
       <StyledErrorWrapper>
         <h2>Sorry, you are out of the solar system. Try maybe later!</h2>
       </StyledErrorWrapper>
     );
   }
-
-  return (
-    <Wrapper>
-      <StyledImageWrapper>
-        <StyledImage
-          planetName={planet.name}
-          src={contentName === 'structure' ? planet.images.structure.url : planet.images.overview.url}
-        />
-        {contentName === 'surface' && <StyledSurfaceImage src={planet.images.surface.url} />}
-      </StyledImageWrapper>
-
-      <StyledContentWrapper>
-        <StyledContent>
-          <StyledTitle>{planet.name}</StyledTitle>
-          <p>{planet[contentName].content}</p>
-          <SourceLink sourceName="Wikipedia" source={planet[contentName].source} />
-        </StyledContent>
-        <SwitchContentButtons
-          color={planet.name}
-          contentName={contentName}
-          handleSetContentName={handleSetContentName}
-        />
-      </StyledContentWrapper>
-
-      <StatisticsList statistics={planet.statistics} />
-    </Wrapper>
-  );
 };
 
 export default Planet;
