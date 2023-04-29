@@ -19,7 +19,7 @@ import {
 } from './Planet.styles';
 
 const Planet = () => {
-  const { planet, planetName, isLoading } = usePlanet();
+  const { planet, planetName, isLoading, isError } = usePlanet();
   const [contentName, setContentName] = useState<ContentNameType>('overview');
 
   const handleSetContentName = (contentName: ContentNameType) => {
@@ -36,13 +36,13 @@ const Planet = () => {
         <Spinner color={planetName !== undefined ? planetName : 'white'} />
       </StyledSpinnerWrapper>
     );
-  } else if (planet === null) {
+  } else if (isError) {
     return (
       <StyledErrorWrapper>
         <h2>Sorry, we were unable to fetch planet data. Please try again later.</h2>
       </StyledErrorWrapper>
     );
-  } else if (planet !== null && planet !== undefined) {
+  } else if (planet !== undefined) {
     return (
       <Wrapper>
         <StyledImageWrapper>
@@ -70,6 +70,8 @@ const Planet = () => {
         <StatisticsList statistics={planet.statistics} />
       </Wrapper>
     );
+  } else {
+    return null;
   }
 };
 

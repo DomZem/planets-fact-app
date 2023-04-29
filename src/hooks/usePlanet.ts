@@ -13,7 +13,9 @@ interface PlanetParams extends Params {
 
 export const usePlanet = () => {
   const { planetName } = useParams<PlanetParams>();
-  const [planet, setPlanet] = useState<PlanetType | null | undefined>(undefined);
+  const [planet, setPlanet] = useState<PlanetType>();
+
+  const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const query = `
@@ -46,6 +48,7 @@ export const usePlanet = () => {
 
   const getPlanet = async () => {
     setIsLoading(true);
+    setIsError(false);
     try {
       const { data } = await axios.post(
         API_URL,
@@ -62,7 +65,7 @@ export const usePlanet = () => {
       );
       setPlanet(data.data.planetModel);
     } catch (e) {
-      setPlanet(null);
+      setIsError(true);
     } finally {
       setIsLoading(false);
     }
@@ -76,5 +79,6 @@ export const usePlanet = () => {
     planet,
     planetName,
     isLoading,
+    isError,
   };
 };
