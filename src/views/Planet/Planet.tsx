@@ -19,7 +19,7 @@ import {
 } from './Planet.styles';
 
 const Planet = () => {
-  const { planet, planetName, isLoading, isError } = usePlanet();
+  const { planet, planetName, isLoading } = usePlanet();
   const [contentName, setContentName] = useState<ContentNameType>('overview');
 
   const handleSetContentName = (contentName: ContentNameType) => {
@@ -36,21 +36,22 @@ const Planet = () => {
         <Spinner color={planetName !== undefined ? planetName : 'white'} />
       </StyledSpinnerWrapper>
     );
-  } else if (isError) {
+  } else if (planet === null) {
     return (
       <StyledErrorWrapper>
         <h2>Sorry, we were unable to fetch planet data. Please try again later.</h2>
       </StyledErrorWrapper>
     );
-  } else if (planet !== undefined) {
+  } else if (planet !== null && planet !== undefined) {
     return (
       <Wrapper>
         <StyledImageWrapper>
           <StyledImage
+            key={planet.name}
             planetName={planet.name}
             src={contentName === 'structure' ? planet.images.structure.url : planet.images.overview.url}
           />
-          {contentName === 'surface' && <StyledSurfaceImage src={planet.images.surface.url} />}
+          {contentName === 'surface' && <StyledSurfaceImage key={planet.name} src={planet.images.surface.url} />}
         </StyledImageWrapper>
 
         <StyledContentWrapper>
@@ -68,12 +69,6 @@ const Planet = () => {
 
         <StatisticsList statistics={planet.statistics} />
       </Wrapper>
-    );
-  } else {
-    return (
-      <StyledErrorWrapper>
-        <h2>Sorry, you are out of the solar system. Try maybe later!</h2>
-      </StyledErrorWrapper>
     );
   }
 };
