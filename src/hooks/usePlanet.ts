@@ -13,7 +13,7 @@ interface PlanetParams extends Params {
 
 export const usePlanet = () => {
   const { planetName } = useParams<PlanetParams>();
-  const [planet, setPlanet] = useState<PlanetType | null>();
+  const [planet, setPlanet] = useState<PlanetType | null | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
   const query = `
